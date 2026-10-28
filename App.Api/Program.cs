@@ -114,6 +114,10 @@ var app = builder.Build();
 // ---------- Seed: מנהל ראשוני ----------
 using (var scope = app.Services.CreateScope())
 {
+    // ב־Render (Production) ה־migrations רצים בעליית השרת. בפיתוח מריצים אותם ידנית.
+    if (app.Environment.IsProduction())
+        await scope.ServiceProvider.GetRequiredService<AppDbContext>().Database.MigrateAsync();
+
     var managerService = scope.ServiceProvider.GetRequiredService<IManagerService>();
     await managerService.EnsureInitialManagerAsync();
 }
