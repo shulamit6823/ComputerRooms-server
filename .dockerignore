@@ -1,0 +1,7 @@
+**/bin/
+**/obj/
+.vs/
+.git/
+App.Tests/
+*.docx
+App.Api/appsettings.Development.json

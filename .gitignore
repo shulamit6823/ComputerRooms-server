@@ -1,0 +1,8 @@
+bin/
+obj/
+.vs/
+*.user
+
+# הגדרות מקומיות עם סיסמת המסד ומפתח ה־JWT - לא נכנסות ל־Git
+App.Api/appsettings.Development.json
+TestResults/
